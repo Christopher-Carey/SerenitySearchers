@@ -3,7 +3,7 @@ require('../models/model')
 const mongoose = require('mongoose'),
     location = mongoose.model("Location");
     quote = mongoose.model("Quote");
-
+    treatment = mongoose.model('Treatment');
     module.exports = {
 
         index: function (request, response) {
@@ -13,6 +13,15 @@ const mongoose = require('mongoose'),
         },
         indexL: function (request, response) {
             location.find()
+                .then(quotes => {
+                    console.log("test")
+                    
+                    response.json({ results: quotes })
+                })
+                .catch(err => response.json({ error: err.error }))
+        },
+        indexT: function (request, response) {
+            treatment.find()
                 .then(quotes => response.json({ results: quotes }))
                 .catch(err => response.json({ error: err.error }))
         },

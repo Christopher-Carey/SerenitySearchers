@@ -22,6 +22,7 @@
     "@angular/router": "~8.2.14",
     "@ng-bootstrap/ng-bootstrap": "^5.1.4",
     "@types/googlemaps": "^3.38.1",
+    "agm-overlays": "^1.4.1",
     "rxjs": "^6.5.3",
     "rxjs-compat": "^6.5.3",
     "tslib": "^1.10.0",

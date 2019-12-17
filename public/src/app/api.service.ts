@@ -12,6 +12,9 @@ export class ApiService {
   getApisL(){
     return this._http.get('/api/location');
   }
+  getApisT(){
+    return this._http.get('/api/treatment');
+  }
   getApi(id){
     return this._http.get(`/api/quote/${id}`,id);
   }

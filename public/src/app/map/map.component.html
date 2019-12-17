@@ -4,14 +4,21 @@
 </form> -->
 
 <agm-map
-  [latitude]="location?.lat"
-  [longitude]="location?.lng"
+  [latitude]="41.54228"
+  [longitude]="-87.888218"
   [zoom]="8"
   [disableDefaultUI]="false"
   [zoomControl]="false">
-  <agm-marker *ngFor="let i of markers"
-      [latitude]="i.lat"
-      [longitude]="i.lng">   
+  <agm-marker *ngFor="let i of LocationList"
+      [latitude]="i.Latitude"
+      [longitude]="i.Longitude">
+      
   </agm-marker>
+  <!-- <agm-marker *ngFor="let x of TreatmentMarkers"
+      [latitude]="x.lat"
+      [longitude]="x.lng"
+      [label]="{color: 'black', text:'Treatment'}">
+      
+  </agm-marker> -->
 </agm-map>
 <p *ngIf="loading">Loading...</p>
