@@ -12,10 +12,10 @@
     <app-show></app-show>
   </div>
   <div class="col">
-    <app-map id="meetingMap"></app-map>
-    <app-map-t id="treatmentMap"></app-map-t>
+    <app-map *ngIf="MapSwitch==true" id="meetingMap"></app-map>
+    <app-map-t *ngIf="MapSwitch==false"  id="treatmentMap"></app-map-t>
   </div>
 </div>
-<app-list id="meetingList"></app-list>
-<app-list-t id="treatmentList"></app-list-t>
+<app-list *ngIf="ListSwitch==true" id="meetingList"></app-list>
+<app-list-t *ngIf="ListSwitch==false"></app-list-t>
 <router-outlet></router-outlet>

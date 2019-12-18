@@ -10,25 +10,19 @@ export class AppComponent implements OnInit {
   ApisList = [];
   Api;
   newApi;
+  MapSwitch=true;
+  ListSwitch=true;
 
   constructor(private _apiService: ApiService){}
   ngOnInit(){
-    this.newApi={
-      title:'',
-      description:''
-    }
   }
   TreatmentMaps(){
-    document.getElementById('treatmentList').style.display = "block"
-    document.getElementById('meetingList').style.display = "none"
-    document.getElementById('treatmentMap').style.display = "block"
-    document.getElementById('meetingMap').style.display = "none"
+    this.MapSwitch = false;
+    this.ListSwitch = false;
   }
   MeetingMaps(){
-    document.getElementById('treatmentList').style.display = "none"
-    document.getElementById('meetingList').style.display = "block"
-    document.getElementById('treatmentMap').style.display = "none"
-    document.getElementById('meetingMap').style.display = "block"
+    this.MapSwitch = true;
+    this.ListSwitch = true;
   }
   getApisFromService(){
     let observable = this._apiService.getApis();
