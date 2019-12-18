@@ -2,24 +2,20 @@
   <div class="nav-wrapper">
     <a href="#" class="brand-logo">Serenity Searchers</a>
     <ul id="nav-mobile" class="right hide-on-med-and-down">
-      <li><a href="#">Something 1</a></li>
-      <li><a href="#">Something 2</a></li>
-      <li><a href="#">Something 3</a></li>
+      <li><a (click)="TreatmentMaps()">Treatment</a></li>
+      <li><a (click)="MeetingMaps()">Meetings</a></li>
     </ul>
   </div>
 </nav>
-
 <div class="row">
   <div class="col">
     <app-show></app-show>
   </div>
   <div class="col">
-    <app-map></app-map>
+    <app-map id="meetingMap"></app-map>
+    <app-map-t id="treatmentMap"></app-map-t>
   </div>
 </div>
-<app-list></app-list>
-
-
-
-
+<app-list id="meetingList"></app-list>
+<app-list-t id="treatmentList"></app-list-t>
 <router-outlet></router-outlet>

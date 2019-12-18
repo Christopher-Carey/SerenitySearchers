@@ -18,6 +18,18 @@ export class AppComponent implements OnInit {
       description:''
     }
   }
+  TreatmentMaps(){
+    document.getElementById('treatmentList').style.display = "block"
+    document.getElementById('meetingList').style.display = "none"
+    document.getElementById('treatmentMap').style.display = "block"
+    document.getElementById('meetingMap').style.display = "none"
+  }
+  MeetingMaps(){
+    document.getElementById('treatmentList').style.display = "none"
+    document.getElementById('meetingList').style.display = "block"
+    document.getElementById('treatmentMap').style.display = "none"
+    document.getElementById('meetingMap').style.display = "block"
+  }
   getApisFromService(){
     let observable = this._apiService.getApis();
     observable.subscribe(results => {

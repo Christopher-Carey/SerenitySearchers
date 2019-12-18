@@ -1,0 +1,14 @@
+
+<agm-map
+  id="treatmentMap"
+  [latitude]="41.54228"
+  [longitude]="-87.888218"
+  [zoom]="8"
+  [disableDefaultUI]="false"
+  [zoomControl]="false">
+  <h1>test</h1>
+  <agm-marker *ngFor="let x of TreatmentMarkers"
+      [latitude]="x.lat"
+      [longitude]="x.lng">
+  </agm-marker>
+</agm-map>

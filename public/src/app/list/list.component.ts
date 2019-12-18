@@ -18,6 +18,9 @@ export class ListComponent implements OnInit {
     this.getLocationsFromService()
     this.getTreatmentFromService()
   }
+    switchMaps(){
+      
+    }
     getLocationsFromService(){
     let observable = this._apiService.getApisL();
     observable.subscribe(results => {

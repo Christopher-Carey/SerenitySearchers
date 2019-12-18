@@ -1,9 +1,5 @@
-<!-- <form (ngSubmit)="showLocation()">
-  <input type="text" [(ngModel)]="address" required [ngModelOptions]="{standalone: true}">
-  <button type="submit">Show Location</button>
-</form> -->
-
 <agm-map
+  id="meetingMap"
   [latitude]="41.54228"
   [longitude]="-87.888218"
   [zoom]="8"
@@ -21,4 +17,5 @@
       
   </agm-marker> -->
 </agm-map>
+
 <p *ngIf="loading">Loading...</p>

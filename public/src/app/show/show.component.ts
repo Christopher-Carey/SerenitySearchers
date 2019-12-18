@@ -12,10 +12,7 @@ import { Pipe, PipeTransform } from '@angular/core';
   providers: [DatePipe]
 })
 export class ShowComponent implements OnInit {
-  
-  QuoteList;
   Quote;
-  LocationList;
   constructor(
     private datePipe: DatePipe,
     private _apiService: ApiService,
@@ -24,13 +21,9 @@ export class ShowComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.getApisFromService()
-    // this.getLocationsFromService()
-    
     var ddMMyyyy = this.datePipe.transform(new Date().toDateString(),"EEEE, MMMM d");
     console.log(ddMMyyyy); //output - 14-02-2019
     this.ApiFromService(ddMMyyyy)
-    
   }
 
   ApiFromService(date){
@@ -39,26 +32,6 @@ export class ShowComponent implements OnInit {
       console.log("yay",results)
       this.Quote = results['results']
       console.log(this.Quote)
-      // this._apiService.getApi(id)
-
     })
   }
-
-  getApisFromService(){
-    let observable = this._apiService.getApis();
-    observable.subscribe(results => {
-      console.log("yay",results)
-      this.QuoteList = results['results']
-      this._apiService.getApis()
-    })
-  }
-  // getLocationsFromService(){
-  //   let observable = this._apiService.getApisL();
-  //   observable.subscribe(results => {
-  //     console.log("yay",results)
-  //     this.LocationList = results['results']
-  //     this._apiService.getApis()
-  //   })
-  // }
-
 }
