@@ -12,7 +12,7 @@ import { ApiService } from '../api.service';
   styleUrls: ['./map-t.component.css']
 })
 export class MapTComponent implements OnInit {
-
+  TreatmentList;
   constructor(
     private _apiService: ApiService,
     // private geocodeService: GeocodeService,
@@ -20,6 +20,14 @@ export class MapTComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.getTreatmentFromService()
+  }
+    getTreatmentFromService() {
+    let observable = this._apiService.getApisT();
+    observable.subscribe(results => {
+      console.log("yay", results)
+      this.TreatmentList = results['results']
+    })
   }
 
 }

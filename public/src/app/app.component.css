@@ -1,6 +1,6 @@
 nav{
     padding-left: 20px;
 }
-#treatmentList{
-    display: none;
+.brand-logo{
+    position: absolute;
 }

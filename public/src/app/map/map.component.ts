@@ -36,12 +36,6 @@ export class MapComponent implements OnInit {
       console.log("Location List: "+this.LocationList)
     })
   }
-  // getTreatmentFromService() {
-  //   let observable = this._apiService.getApisT();
-  //   observable.subscribe(results => {
-  //     console.log("yay", results)
-  //     this.TreatmentList = results['results']
-  //   })
-  // }
+
 
 }

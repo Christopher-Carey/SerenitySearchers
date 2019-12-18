@@ -7,8 +7,8 @@
   [disableDefaultUI]="false"
   [zoomControl]="false">
   <h1>test</h1>
-  <agm-marker *ngFor="let x of TreatmentMarkers"
-      [latitude]="x.lat"
-      [longitude]="x.lng">
+  <agm-marker *ngFor="let x of TreatmentList"
+      [latitude]="x.Latitude"
+      [longitude]="x.Longitude">
   </agm-marker>
 </agm-map>

@@ -9,14 +9,12 @@ import { ApiService } from '../api.service';
 })
 export class ListComponent implements OnInit {
   LocationList;
-  TreatmentList;
   constructor(
     private _apiService: ApiService,
   ) { }
 
   ngOnInit() {
     this.getLocationsFromService()
-    this.getTreatmentFromService()
   }
     switchMaps(){
       
@@ -29,13 +27,6 @@ export class ListComponent implements OnInit {
       this._apiService.getApis()
     })
   }
-    getTreatmentFromService(){
-    let observable = this._apiService.getApisT();
-    observable.subscribe(results => {
-      console.log("yay",results)
-      this.TreatmentList = results['results']
-      this._apiService.getApis()
-    })
-  }
+
 
 }
