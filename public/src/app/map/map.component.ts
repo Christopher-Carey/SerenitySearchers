@@ -1,10 +1,9 @@
 import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { NgModel } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
-// import { GeocodeService } from '../geocode.service';
-// import { Location } from '../location-model';
 import { Placeholder } from '@angular/compiler/src/i18n/i18n_ast';
 import { ApiService } from '../api.service';
+// import { ListComponent } from '../list/list.component'
 
 
 @Component({
@@ -13,21 +12,19 @@ import { ApiService } from '../api.service';
   styleUrls: ['./map.component.css'],
 })
 export class MapComponent implements OnInit {
-  // address = "London";
-  // location: Location;
-  // loading: boolean;
   LocationList;
   TreatmentList;
   clicked;
+  
   constructor(
     private _apiService: ApiService,
-    // private geocodeService: GeocodeService,
     private ref: ChangeDetectorRef,
+    // private listComponent: ListComponent,
   ) { }
 
   ngOnInit() {
+    // this.LocationList = this.listComponent.LocationList
     this.getApisFromService();
-
   }
   clickedMarker(label: string, index: number) {
     this.clicked = this.LocationList[index]

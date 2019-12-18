@@ -10,6 +10,8 @@ module.exports = function (app) {
 
     app.get("/api/quote/:id", (request, response) => serenity.show(request,response));
 
+    app.get("/api/location/:day", (request, response) => serenity.showD(request,response));
+
     app.post("/api/serenity/new", (request, response) => serenity.create(request,response)); 
 
     app.put("/api/serenity/update/:id", (request, response) => serenity.update(request,response));

@@ -34,6 +34,7 @@ import { ListTComponent } from './list-t/list-t.component';
   ],
   providers: [
     ApiService,
+    ListComponent,
     // GeocodeService
   ],
   bootstrap: [AppComponent]

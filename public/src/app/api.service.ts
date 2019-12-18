@@ -9,6 +9,9 @@ export class ApiService {
   getApis(){
     return this._http.get('/api/quote');
   }
+  getDay(day){
+    return this._http.get(`/api/location/${day}`,day);
+  }
   getApisL(){
     return this._http.get('/api/location');
   }

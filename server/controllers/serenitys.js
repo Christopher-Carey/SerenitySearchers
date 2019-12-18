@@ -26,6 +26,12 @@ const mongoose = require('mongoose'),
                 .then(quote => response.json({ results: quote }))
                 .catch(err => response.json({ error: err.error }))
         },
+        showD: function (request, response) {
+            console.log(request.params)
+            location.find({Time: { $regex: request.params.day, $options: "i" } })
+                .then(quote => response.json({ results: quote }))
+                .catch(err => response.json({ error: err.error }))
+        },
         create: function (request, response) {
             quote.create(request.body)
                 .then(quote => response.json({ results: quote }))
