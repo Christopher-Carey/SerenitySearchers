@@ -18,6 +18,7 @@ export class MapComponent implements OnInit {
   // loading: boolean;
   LocationList;
   TreatmentList;
+  clicked;
   constructor(
     private _apiService: ApiService,
     // private geocodeService: GeocodeService,
@@ -28,12 +29,14 @@ export class MapComponent implements OnInit {
     this.getApisFromService();
 
   }
+  clickedMarker(label: string, index: number) {
+    this.clicked = this.LocationList[index]
+  }
   getApisFromService() {
     let observable = this._apiService.getApisL();
     observable.subscribe(results => {
       console.log("yay", results)
       this.LocationList = results['results']
-      console.log("Location List: "+this.LocationList)
     })
   }
 

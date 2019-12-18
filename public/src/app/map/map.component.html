@@ -5,17 +5,36 @@
   [zoom]="8"
   [disableDefaultUI]="false"
   [zoomControl]="false">
-  <agm-marker *ngFor="let i of LocationList"
+  <!-- <agm-marker *ngFor="let i of LocationList"
       [latitude]="i.Latitude"
       [longitude]="i.Longitude">
       
   </agm-marker>
-  <!-- <agm-marker *ngFor="let x of TreatmentMarkers"
-      [latitude]="x.lat"
-      [longitude]="x.lng"
-      [label]="{color: 'black', text:'Treatment'}">
-      
-  </agm-marker> -->
+  <agm-info-window #infoWindow>
+    This is the info window template.
+  </agm-info-window> -->
+
+  <agm-marker 
+  *ngFor="let m of LocationList; let i = index"
+  (markerClick)="clickedMarker(m.label, i)"
+  [latitude]="m.Latitude"
+  [longitude]="m.Longitude"
+  
+  [markerDraggable]="m.draggable"
+  (dragEnd)="markerDragEnd(m, $event)">
+  
+<agm-info-window>
+  <strong>{{clicked.Time}}</strong><br>
+  <strong>{{clicked.Name}}</strong><br>
+  <strong>{{clicked.Location}}</strong><br>
+  <strong>{{clicked.Address}}</strong><br>
+  <strong>{{clicked.City}}</strong>
+</agm-info-window>
+
+</agm-marker>
+
+
+
 </agm-map>
 
 <p *ngIf="loading">Loading...</p>

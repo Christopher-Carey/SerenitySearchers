@@ -13,11 +13,7 @@ const mongoose = require('mongoose'),
         },
         indexL: function (request, response) {
             location.find()
-                .then(quotes => {
-                    console.log("test")
-                    
-                    response.json({ results: quotes })
-                })
+                .then(quotes => response.json({ results: quotes }))
                 .catch(err => response.json({ error: err.error }))
         },
         indexT: function (request, response) {
@@ -26,14 +22,8 @@ const mongoose = require('mongoose'),
                 .catch(err => response.json({ error: err.error }))
         },
         show: function (request, response) {
-            console.log(request.params.id)
-
             quote.findOne({date: request.params.id})
-                .then(quote => {
-                    console.log(request.params.id)
-
-                    response.json({ results: quote })}
-                )
+                .then(quote => response.json({ results: quote }))
                 .catch(err => response.json({ error: err.error }))
         },
         create: function (request, response) {
@@ -47,7 +37,6 @@ const mongoose = require('mongoose'),
                 .catch(err => response.json({ error: err.error }))
         },
         update: function (request, response) {
-            console.log(request.body)
             quote.updateOne({_id:request.params.id}, request.body)
                 .then(result =>  response.json({ results: result }))
                 .catch(err => response.json({ error: err.error }))

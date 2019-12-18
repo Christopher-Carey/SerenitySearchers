@@ -22,7 +22,6 @@ export class ShowComponent implements OnInit {
 
   ngOnInit() {
     var ddMMyyyy = this.datePipe.transform(new Date().toDateString(),"EEEE, MMMM d");
-    console.log(ddMMyyyy); //output - 14-02-2019
     this.ApiFromService(ddMMyyyy)
   }
 
@@ -31,7 +30,6 @@ export class ShowComponent implements OnInit {
     observable.subscribe(results => {
       console.log("yay",results)
       this.Quote = results['results']
-      console.log(this.Quote)
     })
   }
 }
