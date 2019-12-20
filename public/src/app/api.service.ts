@@ -5,7 +5,13 @@ import { HttpClient } from '@angular/common/http'
   providedIn: 'root'
 })
 export class ApiService {
-  constructor(public _http: HttpClient) { }
+  LocationList
+  constructor(
+    public _http: HttpClient,
+    ) { }
+  getVarr(){
+    return this.LocationList;
+  }  
   getApis(){
     return this._http.get('/api/quote');
   }

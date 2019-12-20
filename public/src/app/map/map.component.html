@@ -23,8 +23,8 @@
   [markerDraggable]="m.draggable"
   (dragEnd)="markerDragEnd(m, $event)">
   
-<agm-info-window>
-  <strong>{{clicked.Time}}</strong><br>
+<agm-info-window *ngIf="clickedbool == true">
+  <strong >{{clicked.Time}}</strong><br>
   <strong>{{clicked.Name}}</strong><br>
   <strong>{{clicked.Location}}</strong><br>
   <strong>{{clicked.Address}}</strong><br>
